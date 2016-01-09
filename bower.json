@@ -1,0 +1,24 @@
+{
+  "name": "website-portfolio",
+  "description": "My portfolio website",
+  "main": "index.js",
+  "authors": [
+    "Gabriel D. Celery"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/GabrielDCelery/website-portfolio",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.0",
+    "mustache.js": "mustache#~2.2.1",
+    "bootstrap": "~3.3.6",
+    "normalize-css": "normalize.css#~3.0.3"
+  }
+}

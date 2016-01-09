@@ -1,0 +1,28 @@
+{
+  "name": "website-portfolio",
+  "version": "1.0.0",
+  "description": "My portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GabrielDCelery/website-portfolio.git"
+  },
+  "author": "Gabriel D. Celery",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GabrielDCelery/website-portfolio/issues"
+  },
+  "homepage": "https://github.com/GabrielDCelery/website-portfolio#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.1.0",
+    "gulp-less": "^3.0.5",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.1"
+  }
+}
