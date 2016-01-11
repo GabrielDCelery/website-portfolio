@@ -19,6 +19,7 @@
     "jquery": "~2.2.0",
     "mustache.js": "mustache#~2.2.1",
     "bootstrap": "~3.3.6",
-    "normalize-css": "normalize.css#~3.0.3"
+    "normalize-css": "normalize.css#~3.0.3",
+    "jquery.scrollTo": "~2.1.2"
   }
 }
