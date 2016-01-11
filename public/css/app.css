@@ -1157,6 +1157,9 @@ main {
 .portfolio-item img {
   width: 100%;
 }
+.portfolio-item a:hover {
+  text-decoration: none;
+}
 .portfolio-item button {
   font-size: 14px;
   padding: 6px;
