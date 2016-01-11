@@ -1,0 +1,45 @@
+footer {
+	height: @footer-height;
+	padding: @footer-padding;
+	background-color: @footer-color;
+
+	img {
+		width: @footer-icon-size;
+		height: @footer-icon-size;
+		margin: 0 @footer-padding;
+		cursor: pointer;
+	}
+
+}
+
+@media (min-width: @screen-sm-min) {
+
+	footer {
+		height: @footer-height * 1.5;
+		padding: @footer-padding * 1.5;
+
+		img {
+			width: @footer-icon-size * 1.5;
+			height: @footer-icon-size * 1.5;
+			margin: 0 @footer-padding * 1.5;
+		}		
+	
+	}
+
+}
+
+@media (min-width: @screen-md-min) {
+
+	footer {
+		height: @footer-height * 2;
+		padding: @footer-padding * 2;
+
+		img {
+			width: @footer-icon-size * 2;
+			height: @footer-icon-size * 2;
+			margin: 0 @footer-padding * 2;
+		}		
+
+	}
+
+}

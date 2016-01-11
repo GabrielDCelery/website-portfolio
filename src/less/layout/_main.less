@@ -1,0 +1,139 @@
+main {
+	padding: 0 5%;
+}
+
+.portfolio-content-title {
+
+	padding-top: @content-title-padding;
+	padding-bottom: @content-title-padding;
+	font-family: 'CustomTOR' !important;
+	font-size: @content-title-text-size;
+	color: @content-title-text-color-primary;
+
+	span {
+		color: @content-title-text-color-secondary;
+	}
+
+}
+
+.portfolio-content,
+.portfolio-item {
+
+	margin-top: @content-margin;
+	font-size: @content-text-font-size;
+
+}
+
+.portfolio-item {
+
+	padding: @content-item-padding;
+
+	background-color: @content-item-background-color;
+	border: @content-item-border-width solid @content-item-border-color;
+
+	img {
+		width: 100%;
+	}
+
+	button {
+		font-size: @content-text-font-size;
+		padding: @content-button-padding;
+	}
+
+	[class*='col-']{
+		padding-top: @content-item-padding;
+		padding-bottom: @content-item-padding;
+	}
+
+}
+
+.contact {
+	margin: @content-margin auto;
+	padding: @contact-padding;
+	color: @contact-color;
+	background-color: @contact-background-color;
+	font-size: @contact-font-size;
+	cursor: pointer;
+}
+
+#content-aboutme {
+	img {
+		width: 40%;
+		border-radius: 100%;
+	}
+}
+
+@media (min-width: @screen-sm-min) {
+
+	.portfolio-content-title {
+		padding-top: @content-title-padding * 1.5;
+		padding-bottom: @content-title-padding * 1.5;
+		font-size: @content-title-text-size * 2;
+	}
+
+	.portfolio-item,
+	.portfolio-content {
+
+		margin-top: @content-item-padding * 2;
+		font-size: @content-text-font-size * 8 / 7;
+
+	}
+
+	#content-aboutme {
+		img {
+			width: 100%;
+		}
+	}
+
+	.portfolio-item {
+
+		padding: @content-item-padding * 2;
+
+		button {
+			font-size: @content-text-font-size * 8 / 7;
+			padding: @content-button-padding * 1.5;
+		}
+
+	}
+
+	.contact {
+		padding: @contact-padding * 1.5;
+		font-size: @contact-font-size * 1.5;
+	}
+
+
+}
+
+@media (min-width: @screen-md-min) {
+
+	.portfolio-content-title {
+		padding-top: @content-title-padding * 2.5;
+		padding-bottom: @content-title-padding * 2.5;
+		font-size: @content-title-text-size * 2.5;
+	}
+
+	.portfolio-item,
+	.portfolio-content {
+
+		margin-top: @content-margin * 2;
+		font-size: @content-text-font-size * 9 / 7;
+
+	}
+
+	.portfolio-item {
+
+		padding: @content-item-padding * 3;
+
+		button {
+			font-size: @content-text-font-size * 9 / 7;
+			padding: @content-button-padding * 2;
+		}
+
+	}
+
+	.contact {
+		padding: @contact-padding * 2;
+		font-size: @contact-font-size * 2;
+	}
+
+}

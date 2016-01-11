@@ -1,0 +1,48 @@
+@media (min-width: @screen-sm-min) {
+
+	.navbar {
+		height: 100%;
+		margin-bottom: 0;
+		border-radius: 0;
+		border: 0;
+	}
+
+	.navbar-default {
+
+		background-color: @navbar-color;
+
+		li {
+			width: 100%;
+			text-align: left;
+			font-size: @navbar-font-size;
+		}
+
+		.navbar-nav li a {
+
+			color: @navbar-text-color;
+
+			&:hover {
+				color: @navbar-text-color-hover;
+			}
+
+			&:focus {
+				color: @navbar-text-color-focus;
+			}
+
+		}
+
+	}
+
+}
+
+@media (min-width: @screen-md-min) {
+
+	.navbar-default {
+
+		li {
+			font-size: @navbar-font-size * 1.5;
+		}
+
+	}
+
+}

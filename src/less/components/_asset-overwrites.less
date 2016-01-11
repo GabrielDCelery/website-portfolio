@@ -1,0 +1,38 @@
+
+.c100 {
+	font-size: @percentage-circle-font-size;
+
+	img {
+		width: 50%;
+	}
+
+	&.small{
+		font-size: @percentage-circle-font-size / 1.5;
+	}
+}
+
+@media (min-width: @screen-sm-min) {
+
+	.c100 {
+		font-size: @percentage-circle-font-size * 1.5;
+
+		&.small{
+			font-size: @percentage-circle-font-size / 1.5 * 1.5;
+		}
+
+	}
+
+}
+
+@media (min-width: @screen-md-min) {
+
+	.c100 {
+		font-size: @percentage-circle-font-size * 2;
+
+		&.small{
+			font-size: @percentage-circle-font-size / 1.5 * 2;
+		}
+
+	}
+
+}

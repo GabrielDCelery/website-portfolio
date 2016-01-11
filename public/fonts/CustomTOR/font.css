@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'CustomTOR';
+	src: url('./CustomTOR.eot');
+	src: local('CustomTOR'), url('./CustomTOR.woff') format('woff'), url('./CustomTOR.ttf') format('truetype');
+}
+/* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_2792">Text with this font applied</p> */
+.fontsforweb_fontid_2792 {
+	font-family: 'CustomTOR' !important;
+}
+
+/* Font downloaded from FontsForWeb.com */

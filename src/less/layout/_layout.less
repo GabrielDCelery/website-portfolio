@@ -1,0 +1,39 @@
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	position: relative;
+	max-width: @max-width;
+}
+
+@media (min-width: @screen-sm-min) {
+
+	header {
+		width: @navbar-width-sm;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		margin-bottom: 0;
+
+	}
+
+	main {
+		margin-left: @navbar-width-sm;
+	}
+
+}
+
+@media (min-width: @screen-md-min) {
+
+	header {
+		width: @navbar-width-md;
+	}
+
+	main {
+		margin-left: @navbar-width-md;
+	}
+
+}
