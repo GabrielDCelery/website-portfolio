@@ -39,6 +39,7 @@
 	<main>
 	<!-- CONTENT/ABOUT ME -->
 		<div class="portfolio-content-title">ABOUT <span>ME</span></div>
+
 		<div id="content-aboutme" class="portfolio-content row">
 			<div class="col-sm-3 col-sm-push-9 text-center">
 				<img src="img/personal-photo-01.jpg">
@@ -50,162 +51,68 @@
 
 	<!-- CONTENT/PORTFOLIO -->	
 		<div class="portfolio-content-title text-right">LOOK <span>WHAT</span> I DID</div>
-		<div class="portfolio-item">
-			<div class="row">
-				<div class="col-sm-12 text-center">
-					<p>szekhelyszolgaltatas.com website</p>
-				</div>
-				<div class="col-sm-7">
-					<img src="img/portfolio-image-001.jpg">
-				</div>
-				<div class="col-sm-5">
-			        <div class="clearfix">
-			            <div class="c100 p23 center">
-			                <span>23%</span>
-			                <div class="slice">
-			                    <div class="bar"></div>
-			                    <div class="fill"></div>
-			                </div>
-			            </div>
-			        </div>				
-				</div>
-				<div class="col-sm-12">
-					<p>Technologies used: HTML5, CSS, Jquery, Bootstrap, Gulp</p>
-					<p>Skills showcased:</p>
-				</div>
-				<div class="col-sm-6">
-					<button class="btn btn-default btn-block btn-primary">VISIT THE WEBSITE</button>
-				</div>
-				<div class="col-sm-6">
-					<button class="btn btn-default btn-block btn-info">VISIT GITHUB</button>
-				</div>
-			</div>
-		</div>
+		<div id="renderedWorks"></div>
 
-		<div class="portfolio-item">
-			<div class="row">
-				<div class="col-sm-12 text-center">
-					<p>szekhelyszolgaltatas.com website</p>
+		<script id="templateWorks" type="x-tmpl-mustache">
+			{{#data}}
+				<div class="portfolio-item">
+					<div class="row">
+						<div class="col-sm-12 text-center">
+							<p>{{title}}</p>
+						</div>
+						<div class="col-sm-7">
+							<img src="{{preview_image}}">
+						</div>
+						<div class="col-sm-5">
+							<div class="clearfix">
+								<div class="c100 p{{completion_percentage}} {{color}} center">
+									<span>{{completion_percentage}}%</span>
+									<div class="slice">
+										<div class="bar"></div>
+										<div class="fill"></div>
+									</div>
+								</div>
+							</div>		
+						</div>
+						<div class="col-sm-12">
+							<p>Technologies used: {{technologies_used}}</p>
+							<p>Skills showcased: {{skills_showcased}}</p>
+						</div>
+						<div class="col-sm-6">
+							<a href="{{link_website}}" target="_blank">
+								<button class="btn btn-default btn-block btn-primary">
+									VISIT THE WEBSITE
+								</button>
+							</a>
+						</div>
+						<div class="col-sm-6">
+							<a href="{{link_github}}" target="_blank">
+								<button class="btn btn-default btn-block btn-info">
+									VISIT GITHUB
+								</button>
+							</a>	
+						</div>
+					</div>
 				</div>
-				<div class="col-sm-7">
-					<img src="img/portfolio-image-001.jpg">
-				</div>
-				<div class="col-sm-5">
-			        <div class="clearfix">
-			            <div class="c100 p76 green center">
-			                <span>76%</span>
-			                <div class="slice">
-			                    <div class="bar"></div>
-			                    <div class="fill"></div>
-			                </div>
-			            </div>
-			        </div>				
-				</div>
-				<div class="col-sm-12">
-					<p>Technologies used:</p>
-					<p>Skills showcased:</p>
-				</div>
-				<div class="col-sm-6">
-					<button class="btn btn-default btn-block btn-primary">VISIT THE WEBSITE</button>
-				</div>
-				<div class="col-sm-6">
-					<button class="btn btn-default btn-block btn-info">VISIT GITHUB</button>
-				</div>
-			</div>
-		</div>
+			{{/data}}
+		</script>
 
-		<div class="portfolio-item">
-			<div class="row">
-				<div class="col-sm-12 text-center">
-					<p>szekhelyszolgaltatas.com website</p>
-				</div>	
-				<div class="col-sm-7">
-					<img src="img/portfolio-image-001.jpg">
-				</div>
-				<div class="col-sm-5">
-			        <div class="clearfix">
-			            <div class="c100 p54 orange center">
-			                <span>54%</span>
-			                <div class="slice">
-			                    <div class="bar"></div>
-			                    <div class="fill"></div>
-			                </div>
-			            </div>
-			        </div>				
-				</div>
-				<div class="col-sm-12">
-					<p>Technologies used:</p>
-					<p>Skills showcased:</p>
-				</div>
-				<div class="col-sm-6">
-					<button class="btn btn-default btn-block btn-primary">VISIT THE WEBSITE</button>
-				</div>
-				<div class="col-sm-6">
-					<button class="btn btn-default btn-block btn-info">VISIT GITHUB</button>
-				</div>
-			</div>
-		</div>
-
-	<!-- CONTENT/SKILLS -->		
+	<!-- CONTENT/SKILLS -->
 		<div class="portfolio-content-title"><span>I CAN</span> DO</div>
-		<div class="clearfix">
-            <div class="c100 p76 green small">
-				<span><img src="img/badge-html5.png"></span>
-                <div class="slice">
-                    <div class="bar"></div>
-                    <div class="fill"></div>
+		<div id="renderedSkills" class="clearfix"></div>
+
+		<script id="templateSkills" type="x-tmpl-mustache">
+			{{#data}}
+				<div class="c100 p{{percentage}} {{color}} small">
+					<span><img src="{{image_name}}"></span>
+					<div class="slice">
+						<div class="bar"></div>
+						<div class="fill"></div>
+					</div>
                 </div>
-            </div>
-            <div class="c100 p76 green small">
-                <span><img src="img/badge-html5.png"></span>
-                <div class="slice">
-                    <div class="bar"></div>
-                    <div class="fill"></div>
-                </div>
-            </div>
-            <div class="c100 p76 green small">
-                <span></span>
-                <div class="slice">
-                    <div class="bar"></div>
-                    <div class="fill"></div>
-                </div>
-            </div>
-            <div class="c100 p76 green small">
-                <span>76%</span>
-                <div class="slice">
-                    <div class="bar"></div>
-                    <div class="fill"></div>
-                </div>
-            </div>
-            <div class="c100 p76 green small">
-                <span>76%</span>
-                <div class="slice">
-                    <div class="bar"></div>
-                    <div class="fill"></div>
-                </div>
-            </div>
-            <div class="c100 p76 green small">
-                <span>76%</span>
-                <div class="slice">
-                    <div class="bar"></div>
-                    <div class="fill"></div>
-                </div>
-            </div>
-            <div class="c100 p76 green small">
-                <span>76%</span>
-                <div class="slice">
-                    <div class="bar"></div>
-                    <div class="fill"></div>
-                </div>
-            </div>
-            <div class="c100 p76 green small">
-                <span>76%</span>
-                <div class="slice">
-                    <div class="bar"></div>
-                    <div class="fill"></div>
-                </div>
-            </div>
-		</div>
+			{{/data}}
+		</script>
+
 
 	<!-- CONTENT/STRENGTHS -->	
 		<div class="portfolio-content-title text-right">PERSONAL <span>STRENGTHS</span></div>

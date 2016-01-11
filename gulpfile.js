@@ -23,7 +23,9 @@ gulp.task('less', function () {
 gulp.task('concatJs', function(){
 	return gulp.src(
 		[
-			'./src/js/app.js'
+			'./src/js/_template_module.js',
+			'./src/js/_template_render_skills.js',
+			'./src/js/_template_render_works.js'
 		]
 	)
 	.pipe(concat('app.js'))
@@ -58,6 +60,7 @@ WATCH
 gulp.task('watch', function(){
 	gulp.watch('./src/less/**/*.less', ['minifyCss']);
 	gulp.watch('./src/js/**/*.js', ['minifyJs']);
+	gulp.watch('./src/php/**/*.php', ['php']);
 });
 
 /********************************************************************************
