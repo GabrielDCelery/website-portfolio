@@ -1134,6 +1134,10 @@ body {
 main {
   padding: 0 5%;
 }
+a:hover,
+a:focus {
+  text-decoration: none;
+}
 .portfolio-content-title {
   padding-top: 6px;
   padding-bottom: 6px;
@@ -1156,9 +1160,6 @@ main {
 }
 .portfolio-item img {
   width: 100%;
-}
-.portfolio-item a:hover {
-  text-decoration: none;
 }
 .portfolio-item button {
   font-size: 14px;
