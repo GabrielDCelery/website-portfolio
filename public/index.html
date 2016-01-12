@@ -68,7 +68,9 @@
 						<div class="col-sm-5">
 							<div class="clearfix">
 								<div class="c100 p{{completion_percentage}} {{color}} center">
-									<span>{{completion_percentage}}%</span>
+									<div class="percentage-circle">
+										{{completion_percentage}}%
+									</div>
 									<div class="slice">
 										<div class="bar"></div>
 										<div class="fill"></div>
@@ -108,7 +110,10 @@
 		<script id="templateSkills" type="x-tmpl-mustache">
 			{{#data}}
 				<div class="c100 p{{percentage}} {{color}} small">
-					<span><img src="{{image_name}}"></span>
+					<div class="percentage-circle">
+						<span><img src="{{image_name}}"></span>
+						<span style="display:none">{{skill_name}}</span>
+					</div>
 					<div class="slice">
 						<div class="bar"></div>
 						<div class="fill"></div>

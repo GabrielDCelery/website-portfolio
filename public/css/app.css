@@ -249,7 +249,7 @@
 .c100.small {
   font-size: 80px;
 }
-.c100 > span {
+.c100 > .percentage-circle {
   position: absolute;
   width: 100%;
   z-index: 1;
@@ -258,7 +258,7 @@
   width: 5em;
   line-height: 5em;
   font-size: 0.2em;
-  color: #ccc;
+  color: #666;
   display: block;
   text-align: center;
   white-space: nowrap;
@@ -1007,10 +1007,7 @@
 .c100:hover {
   cursor: default;
 }
-.c100:hover > span {
-  width: 3.33em;
-  line-height: 3.33em;
-  font-size: 0.3em;
+.c100:hover > .percentage-circle {
   color: #AB3B3E;
 }
 .c100:hover:after {
@@ -1020,47 +1017,47 @@
   height: 0.92em;
 }
 .c100.dark {
-  background-color: #777;
+  background-color: #888;
 }
 .c100.dark .bar,
 .c100.dark .fill {
   border-color: #570204 !important;
 }
-.c100.dark > span {
-  color: #777;
+.c100.dark > .percentage-circle {
+  color: #888;
 }
 .c100.dark:after {
   background-color: #666;
 }
-.c100.dark:hover > span {
+.c100.dark:hover > .percentage-circle {
   color: #570204;
 }
 .c100.green .bar,
 .c100.green .fill {
   border-color: #3E8E32 !important;
 }
-.c100.green:hover > span {
+.c100.green:hover > .percentage-circle {
   color: #3E8E32;
 }
 .c100.green.dark .bar,
 .c100.green.dark .fill {
   border-color: #0B4901 !important;
 }
-.c100.green.dark:hover > span {
+.c100.green.dark:hover > .percentage-circle {
   color: #0B4901;
 }
 .c100.orange .bar,
 .c100.orange .fill {
   border-color: #AC963C !important;
 }
-.c100.orange:hover > span {
+.c100.orange:hover > .percentage-circle {
   color: #AC963C;
 }
 .c100.orange.dark .bar,
 .c100.orange.dark .fill {
   border-color: #584802 !important;
 }
-.c100.orange.dark:hover > span {
+.c100.orange.dark:hover > .percentage-circle {
   color: #584802;
 }
 /*************************************************************************************
@@ -1085,6 +1082,12 @@ CONTENT
 }
 .c100.small {
   font-size: 66.66666667px;
+}
+.c100 span {
+  font-size: 0.8em;
+}
+#renderedSkills .percentage-circle {
+  cursor: pointer;
 }
 @media (min-width: 768px) {
   .c100 {

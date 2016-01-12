@@ -26,7 +26,8 @@ gulp.task('concatJs', function(){
 			'./src/js/_template_module.js',
 			'./src/js/_template_render_skills.js',
 			'./src/js/_template_render_works.js',
-			'./src/js/_function_scroll.js'
+			'./src/js/_function_scroll.js',
+			'./src/js/_function_percentage_icons.js'
 		]
 	)
 	.pipe(concat('app.js'))

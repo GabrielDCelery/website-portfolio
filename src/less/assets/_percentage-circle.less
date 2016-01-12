@@ -5,6 +5,7 @@
 // colors default
 @percentage-circle-primary-color: #AB3B3E;
 @percentage-circle-secondary-color: #ccc;
+@percentage-circle-text-color: #666;
 @percentage-circle-bg-color: #fff;
 
 @percentage-circle-primary-color-green: #3E8E32;
@@ -13,7 +14,7 @@
 
 // colors dark skin
 @percentage-circle-primary-color-dark: #570204;
-@percentage-circle-secondary-color-dark: #777;
+@percentage-circle-secondary-color-dark: #888;
 @percentage-circle-bg-color-dark: #666;
 
 @percentage-circle-primary-color-green-dark: #0B4901;
@@ -107,7 +108,7 @@
     }
 
     // centered value inside circle
-    > span {
+    > .percentage-circle {
         position: absolute;
         width: 100%;
         z-index: 1;
@@ -116,7 +117,7 @@
         width: 5em;
         line-height: 5em;
         font-size: 0.2em;
-        color: @percentage-circle-secondary-color;
+        color: @percentage-circle-text-color;
         display: block;
         text-align: center;
         white-space: nowrap;
@@ -187,10 +188,7 @@
 
         cursor: default;
 
-        > span {
-            width: 3.33em;
-            line-height: 3.33em;
-            font-size: 0.3em;
+        > .percentage-circle {
             color: @percentage-circle-primary-color;
         }
 
@@ -212,7 +210,7 @@
             border-color: @percentage-circle-primary-color-dark !important;
         }
 
-        > span {
+        > .percentage-circle {
             color: @percentage-circle-secondary-color-dark;
         }
 
@@ -223,7 +221,7 @@
 
         &:hover{
 
-            > span {
+            > .percentage-circle {
                 color: @percentage-circle-primary-color-dark;
             }
         }
@@ -235,7 +233,7 @@
         .bar, .fill { border-color: @percentage-circle-primary-color-green !important;}
 
         &:hover{
-            > span { color: @percentage-circle-primary-color-green;}
+            > .percentage-circle { color: @percentage-circle-primary-color-green;}
         }
     }
 
@@ -244,7 +242,7 @@
         .bar, .fill { border-color: @percentage-circle-primary-color-green-dark !important;}
 
         &:hover{
-            > span { color: @percentage-circle-primary-color-green-dark;}
+            > .percentage-circle { color: @percentage-circle-primary-color-green-dark;}
         }
     }
 
@@ -254,7 +252,7 @@
         .bar, .fill { border-color: @percentage-circle-primary-color-orange !important;}
 
         &:hover{
-            > span { color: @percentage-circle-primary-color-orange;}
+            > .percentage-circle { color: @percentage-circle-primary-color-orange;}
         }
     }
 
@@ -263,7 +261,7 @@
         .bar, .fill { border-color: @percentage-circle-primary-color-orange-dark !important;}
 
         &:hover{
-            > span { color: @percentage-circle-primary-color-orange-dark;}
+            > .percentage-circle { color: @percentage-circle-primary-color-orange-dark;}
         }
     }
 }
