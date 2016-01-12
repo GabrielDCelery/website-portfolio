@@ -31,6 +31,32 @@ var templateModule = (function(){
 
 	}
 
+	function checkDisabledStatus(data, dbProjectLink, dbGithubLink){
+
+		for(var i = 0; i < data.length; i++){
+
+			if(data[i][dbProjectLink] === null || data[i][dbProjectLink] === 'undefined' || data[i][dbProjectLink] === ''){
+				data[i]['projectButtonStatus'] = 'disabled';
+				data[i]['projectButtonStyle'] = 'btn-danger';
+			} else {
+				data[i]['projectButtonStatus'] = '';
+				data[i]['projectButtonStyle'] = 'btn-primary';
+			}
+
+			if(data[i][dbGithubLink] === null || data[i][dbGithubLink] === 'undefined' || data[i][dbGithubLink] === ''){
+				data[i]['githubButtonStatus'] = 'disabled';
+				data[i]['githubButtonStyle'] = 'btn-danger';
+			} else {
+				data[i]['githubButtonStatus'] = '';
+				data[i]['githubButtonStyle'] = 'btn-info';
+			}
+
+		}
+
+		return data;
+
+	}
+
 	function renderTemplate(templateId, data, renderedId){
 
 		var template = templateId.html();
@@ -49,6 +75,7 @@ var templateModule = (function(){
 
 		fixImageRoutes: fixImageRoutes,
 		addColorClasses: addColorClasses,
+		checkDisabledStatus: checkDisabledStatus,
 		renderTemplate: renderTemplate
 
 	}

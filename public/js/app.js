@@ -31,6 +31,32 @@ var templateModule = (function(){
 
 	}
 
+	function checkDisabledStatus(data, dbProjectLink, dbGithubLink){
+
+		for(var i = 0; i < data.length; i++){
+
+			if(data[i][dbProjectLink] === null || data[i][dbProjectLink] === 'undefined' || data[i][dbProjectLink] === ''){
+				data[i]['projectButtonStatus'] = 'disabled';
+				data[i]['projectButtonStyle'] = 'btn-danger';
+			} else {
+				data[i]['projectButtonStatus'] = '';
+				data[i]['projectButtonStyle'] = 'btn-primary';
+			}
+
+			if(data[i][dbGithubLink] === null || data[i][dbGithubLink] === 'undefined' || data[i][dbGithubLink] === ''){
+				data[i]['githubButtonStatus'] = 'disabled';
+				data[i]['githubButtonStyle'] = 'btn-danger';
+			} else {
+				data[i]['githubButtonStatus'] = '';
+				data[i]['githubButtonStyle'] = 'btn-info';
+			}
+
+		}
+
+		return data;
+
+	}
+
 	function renderTemplate(templateId, data, renderedId){
 
 		var template = templateId.html();
@@ -49,6 +75,7 @@ var templateModule = (function(){
 
 		fixImageRoutes: fixImageRoutes,
 		addColorClasses: addColorClasses,
+		checkDisabledStatus: checkDisabledStatus,
 		renderTemplate: renderTemplate
 
 	}
@@ -100,6 +127,8 @@ var imagesExtension = '.jpg';
 
 var dbImageName = 'preview_image';
 var dbPercentage = 'completion_percentage';
+var dbProjectLink = 'link_website';
+var dbGithubLink = 'link_github';
 
 var $template = $('#templateWorks');
 var $rendered = $('#renderedWorks');
@@ -112,6 +141,7 @@ $.getJSON(phpGetDataLink, function (data) {
 
 	var data = templateModule.fixImageRoutes(data, dbImageName, imagesLocation, imagesExtension);
 	data = templateModule.addColorClasses(data, dbPercentage);
+	data = templateModule.checkDisabledStatus(data, dbProjectLink, dbGithubLink);
 
 	templateModule.renderTemplate($template, data, $rendered);
 
