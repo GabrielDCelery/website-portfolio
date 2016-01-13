@@ -1172,6 +1172,10 @@ a:focus {
   padding-top: 6px;
   padding-bottom: 6px;
 }
+.portfolio-listing li {
+  font-size: 18px;
+  color: #266d61;
+}
 .contact {
   margin: 20px auto;
   padding: 6px;
@@ -1202,8 +1206,9 @@ hr {
     margin-top: 12px;
     font-size: 16px;
   }
-  #content-aboutme img {
-    width: 100%;
+  .portfolio-listing li {
+    font-size: 21.6px;
+    color: #266d61;
   }
   .portfolio-item {
     padding: 12px;
@@ -1219,6 +1224,9 @@ hr {
   hr {
     margin-top: 30px;
     margin-bottom: 30px;
+  }
+  #content-aboutme img {
+    width: 100%;
   }
 }
 @media (min-width: 992px) {

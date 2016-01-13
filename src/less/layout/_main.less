@@ -57,6 +57,15 @@ a {
 
 }
 
+.portfolio-listing {
+
+	li {
+		font-size: @personal-strengths-text-size;
+		color: @personal-strengths-text-color;
+	}
+
+}
+
 .contact {
 	margin: @content-margin auto;
 	padding: @contact-padding;
@@ -67,10 +76,12 @@ a {
 }
 
 #content-aboutme {
+
 	img {
 		width: 40%;
 		border-radius: 100%;
 	}
+
 }
 
 hr {
@@ -97,10 +108,13 @@ hr {
 
 	}
 
-	#content-aboutme {
-		img {
-			width: 100%;
+	.portfolio-listing {
+
+		li {
+			font-size: @personal-strengths-text-size * 1.2;
+			color: @personal-strengths-text-color;
 		}
+
 	}
 
 	.portfolio-item {
@@ -124,6 +138,12 @@ hr {
 		margin-bottom: @horizontal-ruler-margin * 1.5;
 	}
 
+	#content-aboutme {
+		img {
+			width: 100%;
+		}
+	}
+	
 
 }
 
