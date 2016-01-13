@@ -1176,6 +1176,10 @@ a:focus {
   font-size: 18px;
   color: #266d61;
 }
+.portfolio-listing-text-left,
+.portfolio-listing-text-right {
+  text-align: center;
+}
 .contact {
   margin: 20px auto;
   padding: 6px;
@@ -1216,6 +1220,12 @@ hr {
   .portfolio-item button {
     font-size: 16px;
     padding: 9px;
+  }
+  .portfolio-listing-text-left {
+    text-align: left;
+  }
+  .portfolio-listing-text-right {
+    text-align: right;
   }
   .contact {
     padding: 9px;
