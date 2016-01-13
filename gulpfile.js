@@ -9,6 +9,7 @@ var uglify = require('gulp-uglify');
 var rename = require("gulp-rename");
 var cssnano = require('gulp-cssnano'); // Minify css
 var sourcemaps = require('gulp-sourcemaps');
+var autoprefixer = require('gulp-autoprefixer');
 
 /********************************************************************************
 TASKS
@@ -37,6 +38,7 @@ gulp.task('concatJs', function(){
 gulp.task('minifyCss', ['less'], function(){
 	return gulp.src('./public/css/app.css')
 		.pipe(sourcemaps.init())
+		.pipe(autoprefixer())
 		.pipe(cssnano())
 		.pipe(rename('app.min.css'))
 		.pipe(sourcemaps.write('.'))
