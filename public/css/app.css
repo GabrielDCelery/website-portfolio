@@ -1315,6 +1315,9 @@ footer img {
   }
 }
 @media (min-width: 992px) {
+  nav {
+    padding-top: 50%;
+  }
   .navbar-default li {
     font-size: 18px;
   }
