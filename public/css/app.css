@@ -1085,7 +1085,8 @@ CONTENT
 .c100 span {
   font-size: 0.8em;
 }
-#renderedSkills .percentage-circle {
+#renderedSkills .percentage-circle,
+#renderedTools .percentage-circle {
   cursor: pointer;
 }
 @media (min-width: 768px) {

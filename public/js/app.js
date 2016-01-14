@@ -121,6 +121,39 @@ $.getJSON(phpGetDataLink, function (data) {
 VARIABLES
 ********************************************************************************/
 
+var phpGetDataLink = 'php/get-tools.php';
+var imagesLocation = 'img/';
+var imagesExtension = '.jpg';
+
+var dbImageName = 'image_name';
+var dbPercentage = 'percentage';
+
+var $template = $('#templateTools');
+var $rendered = $('#renderedTools');
+
+/********************************************************************************
+INITIATING FUNCTIONS DURING LOADING
+********************************************************************************/
+
+$.getJSON(phpGetDataLink, function (data) {
+
+	var data = templateModule.fixImageRoutes(data, dbImageName, imagesLocation, imagesExtension);
+	data = templateModule.addColorClasses(data, dbPercentage);
+
+	templateModule.renderTemplate($template, data, $rendered);
+
+});
+
+
+
+
+}());
+(function(){
+
+/********************************************************************************
+VARIABLES
+********************************************************************************/
+
 var phpGetDataLink = 'php/get-works.php';
 var imagesLocation = 'img/';
 var imagesExtension = '.jpg';
@@ -179,6 +212,7 @@ VARIABLES
 ********************************************************************************/
 
 var $renderedSkillsContainer = $('#renderedSkills');
+var $renderedToolsContainer = $('#renderedTools');
 var icon = '.percentage-circle';
 
 /********************************************************************************
@@ -189,6 +223,12 @@ EVENT BINDERS
 		var $spanElements = $(this).find('span');
 		$spanElements.toggle();
 	});
+
+	$renderedToolsContainer.on('click', icon, function(){
+		var $spanElements = $(this).find('span');
+		$spanElements.toggle();
+	});
+
 
 
 }());

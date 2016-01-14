@@ -28,6 +28,7 @@
 						<li><a href="#title-aboutme">Introduction</a></li>
 						<li><a href="#title-portfolio">Portfolio</a></li>
 						<li><a href="#title-skills">Skills</a></li>
+						<li><a href="#title-tools">Tools</a></li>
 						<li><a href="#title-strengths">Strengths</a></li>
 						<li><a href="#title-contact">Contact</a></li>
 					</ul>
@@ -124,6 +125,28 @@
 		</script>
 
 		<hr>
+
+	<!-- CONTENT/TOOLS -->
+		<div id="title-tools" class="portfolio-content-title text-right"><span>TOOLS</span> I AM USING</div>
+		<div id="renderedTools" class="portfolio-content clearfix"></div>
+
+		<script id="templateTools" type="x-tmpl-mustache">
+			{{#data}}
+				<div class="c100 p{{percentage}} {{color}} small">
+					<div class="percentage-circle">
+						<span><img src="{{image_name}}"></span>
+						<span style="display:none">{{tool_name}}</span>
+					</div>
+					<div class="slice">
+						<div class="bar"></div>
+						<div class="fill"></div>
+					</div>
+                </div>
+			{{/data}}
+		</script>
+
+		<hr>
+
 
 	<!-- CONTENT/STRENGTHS -->	
 		<div id="title-strengths" class="portfolio-content-title text-right">PERSONAL <span>STRENGTHS</span></div>
