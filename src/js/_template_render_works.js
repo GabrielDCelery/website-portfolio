@@ -5,7 +5,7 @@ VARIABLES
 ********************************************************************************/
 
 var phpGetDataLink = 'php/get-works.php';
-var imagesLocation = 'img/';
+var imagesLocation = 'img/portfolio/';
 var imagesExtension = '.jpg';
 
 var dbImageName = 'preview_image';

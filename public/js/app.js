@@ -89,7 +89,7 @@ VARIABLES
 ********************************************************************************/
 
 var phpGetDataLink = 'php/get-skills.php';
-var imagesLocation = 'img/';
+var imagesLocation = 'img/badges-skills/';
 var imagesExtension = '.jpg';
 
 var dbImageName = 'image_name';
@@ -122,7 +122,7 @@ VARIABLES
 ********************************************************************************/
 
 var phpGetDataLink = 'php/get-tools.php';
-var imagesLocation = 'img/';
+var imagesLocation = 'img/badges-tools/';
 var imagesExtension = '.jpg';
 
 var dbImageName = 'image_name';
@@ -155,7 +155,7 @@ VARIABLES
 ********************************************************************************/
 
 var phpGetDataLink = 'php/get-works.php';
-var imagesLocation = 'img/';
+var imagesLocation = 'img/portfolio/';
 var imagesExtension = '.jpg';
 
 var dbImageName = 'preview_image';

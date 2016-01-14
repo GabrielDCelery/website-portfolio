@@ -5,7 +5,7 @@ VARIABLES
 ********************************************************************************/
 
 var phpGetDataLink = 'php/get-tools.php';
-var imagesLocation = 'img/';
+var imagesLocation = 'img/badges-tools/';
 var imagesExtension = '.jpg';
 
 var dbImageName = 'image_name';
