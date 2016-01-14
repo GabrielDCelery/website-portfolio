@@ -82,6 +82,24 @@ var templateModule = (function(){
 
 
 }());
+var testDevice = (function(){
+
+	function isMobile(){
+
+		if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+			return true;
+		}
+
+	}
+
+	return {
+
+		isMobile: isMobile
+
+	}
+
+
+}());
 (function(){
 
 /********************************************************************************
@@ -219,17 +237,17 @@ var icon = '.percentage-circle';
 EVENT BINDERS
 ********************************************************************************/
 
-	$renderedSkillsContainer.on('click', icon, toggleImage);
+	$renderedSkillsContainer.on('click touchstart', icon, toggleImage);
+	$renderedToolsContainer.on('click touchstart', icon, toggleImage);
 
-	$renderedSkillsContainer.on('mouseenter', icon, toggleImage);
+	if(!testDevice.isMobile()){
+		
+		$renderedSkillsContainer.on('mouseenter', icon, toggleImage);
+		$renderedSkillsContainer.on('mouseleave', icon, toggleImage);
+		$renderedToolsContainer.on('mouseenter', icon, toggleImage);
+		$renderedToolsContainer.on('mouseleave', icon, toggleImage);
 
-	$renderedSkillsContainer.on('mouseleave', icon, toggleImage);
-
-	$renderedToolsContainer.on('click', icon, toggleImage);
-
-	$renderedToolsContainer.on('mouseenter', icon, toggleImage);
-
-	$renderedToolsContainer.on('mouseleave', icon, toggleImage);
+	}
 
 /********************************************************************************
 FUNCTIONS

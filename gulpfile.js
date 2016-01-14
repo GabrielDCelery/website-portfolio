@@ -27,6 +27,7 @@ gulp.task('concatJs', function(){
 	return gulp.src(
 		[
 			'./src/js/_template_module.js',
+			'./src/js/_template_test_device.js',
 			'./src/js/_template_render_skills.js',
 			'./src/js/_template_render_tools.js',
 			'./src/js/_template_render_works.js',
