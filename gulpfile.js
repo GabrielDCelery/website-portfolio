@@ -12,9 +12,14 @@ var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
+var imageResize = require('gulp-image-resize');
 
 /********************************************************************************
 TASKS
+********************************************************************************/
+
+/********************************************************************************
+JAVASCRIPT
 ********************************************************************************/
 
 gulp.task('less', function () {
@@ -39,6 +44,10 @@ gulp.task('concatJs', function(){
 	.pipe(gulp.dest('./public/js'));
 });
 
+/********************************************************************************
+CSS
+********************************************************************************/
+
 gulp.task('minifyCss', ['less'], function(){
 	return gulp.src('./public/css/app.css')
 		.pipe(sourcemaps.init())
@@ -56,27 +65,79 @@ gulp.task('minifyJs', ['concatJs'], function(){
 		.pipe(gulp.dest('./public/js'));
 });
 
+/********************************************************************************
+PHP
+********************************************************************************/
+
 gulp.task('php', function(){
 	return gulp.src('./src/php/**/*.php')
 		.pipe(gulp.dest('./public/php'));
 });
 
-gulp.task('minifyImages', function(){
-	gulp.src('src/img/**/*.jpg')
-	.pipe(imagemin({
-		progressive: true,
-		svgoPlugins: [{removeViewBox: false}],
-		use: [pngquant()]
-	}))
-	.pipe(gulp.dest('public/img'));
+/********************************************************************************
+IMAGE RESIZE, COMPRESS, COPY
+********************************************************************************/
 
-	gulp.src('src/img/**/*.svg')
-	.pipe(imagemin({
-		progressive: true,
-		svgoPlugins: [{removeViewBox: false}],
-		use: [pngquant()]
-	}))
-	.pipe(gulp.dest('public/img'));
+function resizeImages(sourceDir, destDir, imageSuffixes, imageSizes){
+
+	for(var i = 0; i < imageSizes.length; i++){
+
+		gulp.src(sourceDir)
+		.pipe(imageResize({ 
+			width : imageSizes[i][0],
+			height : imageSizes[i][1],
+			crop : true,
+			upscale : false
+		}))
+		.pipe(imagemin({
+			progressive: true,
+			svgoPlugins: [{removeViewBox: false}],
+			use: [pngquant()]
+		}))
+		.pipe(rename({
+			suffix: imageSuffixes[i]
+		}))
+		.pipe(gulp.dest(destDir))
+
+	}
+
+}
+
+gulp.task('imageResize', function () {
+
+	var sourceDir = 'src/img/badges-skills/**/*.jpg';
+	var destDir = 'public/img/badges-skills';
+	var imageSuffixes = ['-large', '-medium', '-small'];
+	var imageSizes = [[150, 150], [120, 120], [80,80]];
+
+	resizeImages(sourceDir, destDir, imageSuffixes, imageSizes);
+
+	sourceDir = 'src/img/badges-tools/**/*.jpg';
+	destDir = 'public/img/badges-tools';
+	imageSuffixes = ['-large', '-medium', '-small'];
+	imageSizes = [[150, 150], [120, 120], [80,80]];
+
+	resizeImages(sourceDir, destDir, imageSuffixes, imageSizes);
+
+	sourceDir = 'src/img/portfolio/**/*.jpg';
+	destDir = 'public/img/portfolio';
+	imageSuffixes = ['-large', '-medium', '-small'];
+	imageSizes = [[700, 375], [350, 188], [280,150]];
+
+	resizeImages(sourceDir, destDir, imageSuffixes, imageSizes);
+
+	sourceDir = 'src/img/personal-photo-01.jpg';
+	destDir = 'public/img';
+	imageSuffixes = ['', '-large', '-medium', '-small'];
+	imageSizes = [[320, 360], [320, 360], [250, 281], [160,180]];
+
+	resizeImages(sourceDir, destDir, imageSuffixes, imageSizes);
+
+});
+
+gulp.task('copySvg', function () {
+	gulp.src('./src/img/icons/**/*.svg')
+	.pipe(gulp.dest('./public/img/icons'));
 
 });
 
@@ -87,7 +148,7 @@ WATCH
 gulp.task('watch', function(){
 	gulp.watch('./src/less/**/*.less', ['minifyCss']);
 	gulp.watch('./src/js/**/*.js', ['minifyJs']);
-	gulp.watch('./src/img/*', ['minifyImages']);
+	gulp.watch('./src/img/*', ['imageResize', 'copySvg']);
 	gulp.watch('./src/php/**/*.php', ['php']);
 });
 
@@ -95,4 +156,4 @@ gulp.task('watch', function(){
 DEFAULT
 ********************************************************************************/
 
-gulp.task('default', ['minifyCss', 'minifyJs', 'minifyImages', 'php', 'watch']);
+gulp.task('default', ['minifyCss', 'minifyJs', 'imageResize', 'copySvg', 'php', 'watch']);
