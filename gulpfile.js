@@ -10,6 +10,8 @@ var rename = require("gulp-rename");
 var cssnano = require('gulp-cssnano'); // Minify css
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
+var imagemin = require('gulp-imagemin');
+var pngquant = require('imagemin-pngquant');
 
 /********************************************************************************
 TASKS
@@ -58,6 +60,25 @@ gulp.task('php', function(){
 		.pipe(gulp.dest('./public/php'));
 });
 
+gulp.task('minifyImages', function(){
+	gulp.src('src/img/**/*.jpg')
+	.pipe(imagemin({
+		progressive: true,
+		svgoPlugins: [{removeViewBox: false}],
+		use: [pngquant()]
+	}))
+	.pipe(gulp.dest('public/img'));
+
+	gulp.src('src/img/**/*.svg')
+	.pipe(imagemin({
+		progressive: true,
+		svgoPlugins: [{removeViewBox: false}],
+		use: [pngquant()]
+	}))
+	.pipe(gulp.dest('public/img'));
+
+});
+
 /********************************************************************************
 WATCH
 ********************************************************************************/
@@ -65,6 +86,7 @@ WATCH
 gulp.task('watch', function(){
 	gulp.watch('./src/less/**/*.less', ['minifyCss']);
 	gulp.watch('./src/js/**/*.js', ['minifyJs']);
+	gulp.watch('./src/img/*', ['minifyImages']);
 	gulp.watch('./src/php/**/*.php', ['php']);
 });
 
@@ -72,4 +94,4 @@ gulp.task('watch', function(){
 DEFAULT
 ********************************************************************************/
 
-gulp.task('default', ['minifyCss', 'minifyJs', 'php', 'watch']);
+gulp.task('default', ['minifyCss', 'minifyJs', 'minifyImages', 'php', 'watch']);
