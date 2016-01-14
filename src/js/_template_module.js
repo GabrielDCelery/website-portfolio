@@ -1,11 +1,17 @@
 var templateModule = (function(){
 
-	function fixImageRoutes(data, dbImageName, imageLocation, imageExtension){
+	function fixImageRoutes(data, dbImageName, imageLocation, imageExtension, deviceSize){
+
+		if(deviceSize === undefined){
+			deviceSize = '';
+		} else {
+			deviceSize = '-' + deviceSize;
+		}
 
 		for(var i = 0; i < data.length; i++){
 
 			var skill_image_name = data[i][dbImageName];
-			data[i][dbImageName] = imageLocation + skill_image_name + imageExtension;
+			data[i][dbImageName] = imageLocation + skill_image_name + deviceSize + imageExtension;
 
 		}
 

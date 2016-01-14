@@ -22,7 +22,7 @@ INITIATING FUNCTIONS DURING LOADING
 
 $.getJSON(phpGetDataLink, function (data) {
 
-	var data = templateModule.fixImageRoutes(data, dbImageName, imagesLocation, imagesExtension);
+	var data = templateModule.fixImageRoutes(data, dbImageName, imagesLocation, imagesExtension, testDevice.screenSize());
 	data = templateModule.addColorClasses(data, dbPercentage);
 	data = templateModule.checkDisabledStatus(data, dbProjectLink, dbGithubLink);
 
