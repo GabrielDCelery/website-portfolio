@@ -6,7 +6,8 @@ $pdo = new PDO('mysql:dbname=' . $dbname . ';host=' . $host, $db_username, $db_p
 
 $query_string = 
 	'SELECT * FROM ' .
-	$table_name_works;
+	$table_name_works .
+	' ORDER BY listing DESC';
 
 $query = $pdo->query($query_string);
 $result = $query->fetchAll(PDO::FETCH_ASSOC);
