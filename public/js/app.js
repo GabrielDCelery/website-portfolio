@@ -131,6 +131,8 @@ var testDevice = (function(){
 VARIABLES
 ********************************************************************************/
 
+var jsonData;
+
 var phpGetDataLink = 'php/get-skills.php';
 var imagesLocation = 'img/badges-skills/';
 var imagesExtension = '.jpg';
@@ -141,19 +143,33 @@ var dbPercentage = 'percentage';
 var $template = $('#templateSkills');
 var $rendered = $('#renderedSkills');
 
+
+/********************************************************************************
+FUNCTIONS
+********************************************************************************/
+
+function renderSkills(){
+	$.getJSON(phpGetDataLink, function (data) {
+
+		jsonData = templateModule.fixImageRoutes(data, dbImageName, imagesLocation, imagesExtension, testDevice.screenSize());
+		jsonData = templateModule.addColorClasses(data, dbPercentage);
+
+		templateModule.renderTemplate($template, jsonData, $rendered);
+
+	});
+}
+
+/********************************************************************************
+EVENT BINDERS
+********************************************************************************/
+
+$(window).on('resize', renderSkills);
+
 /********************************************************************************
 INITIATING FUNCTIONS DURING LOADING
 ********************************************************************************/
 
-$.getJSON(phpGetDataLink, function (data) {
-
-	var data = templateModule.fixImageRoutes(data, dbImageName, imagesLocation, imagesExtension, testDevice.screenSize());
-	data = templateModule.addColorClasses(data, dbPercentage);
-
-	templateModule.renderTemplate($template, data, $rendered);
-
-});
-
+renderSkills();
 
 
 
@@ -177,30 +193,32 @@ var $template = $('#templateTools');
 var $rendered = $('#renderedTools');
 
 /********************************************************************************
+FUNCTIONS
+********************************************************************************/
+
+function renderTools(){
+	$.getJSON(phpGetDataLink, function (data) {
+
+
+		jsonData = templateModule.fixImageRoutes(data, dbImageName, imagesLocation, imagesExtension, testDevice.screenSize());
+		jsonData = templateModule.addColorClasses(data, dbPercentage);
+
+		templateModule.renderTemplate($template, jsonData, $rendered);
+
+	});
+}
+
+/********************************************************************************
 EVENT BINDERS
 ********************************************************************************/
 
-$(window).on('resize', function() {
-	jsonData = templateModule.fixImageRoutes(jsonData, dbImageName, imagesLocation, imagesExtension, testDevice.screenSize());
-	jsonData = templateModule.addColorClasses(jsonData, dbPercentage);
-
-	templateModule.renderTemplate($template, jsonData, $rendered);
-});
+$(window).on('resize', renderTools);
 
 /********************************************************************************
 INITIATING FUNCTIONS DURING LOADING
 ********************************************************************************/
 
-$.getJSON(phpGetDataLink, function (data) {
-
-	jsonData = templateModule.fixImageRoutes(data, dbImageName, imagesLocation, imagesExtension, testDevice.screenSize());
-	jsonData = templateModule.addColorClasses(data, dbPercentage);
-
-	templateModule.renderTemplate($template, data, $rendered);
-
-});
-
-
+renderTools();
 
 
 }());
@@ -209,6 +227,8 @@ $.getJSON(phpGetDataLink, function (data) {
 /********************************************************************************
 VARIABLES
 ********************************************************************************/
+
+var jsonData;
 
 var phpGetDataLink = 'php/get-works.php';
 var imagesLocation = 'img/portfolio/';
@@ -223,19 +243,34 @@ var $template = $('#templateWorks');
 var $rendered = $('#renderedWorks');
 
 /********************************************************************************
+FUNCTIONS
+********************************************************************************/
+
+function renderWorks(){
+
+	$.getJSON(phpGetDataLink, function (data) {
+
+		jsonData = templateModule.fixImageRoutes(data, dbImageName, imagesLocation, imagesExtension, testDevice.screenSize());
+		jsonData = templateModule.addColorClasses(data, dbPercentage);
+		jsonData = templateModule.checkDisabledStatus(data, dbProjectLink, dbGithubLink);
+
+		templateModule.renderTemplate($template, jsonData, $rendered);
+
+	});
+
+}
+
+/********************************************************************************
+EVENT BINDERS
+********************************************************************************/
+
+$(window).on('resize', renderWorks);
+
+/********************************************************************************
 INITIATING FUNCTIONS DURING LOADING
 ********************************************************************************/
 
-$.getJSON(phpGetDataLink, function (data) {
-
-	var data = templateModule.fixImageRoutes(data, dbImageName, imagesLocation, imagesExtension, testDevice.screenSize());
-	data = templateModule.addColorClasses(data, dbPercentage);
-	data = templateModule.checkDisabledStatus(data, dbProjectLink, dbGithubLink);
-
-	templateModule.renderTemplate($template, data, $rendered);
-
-});
-
+renderWorks();
 
 
 }());

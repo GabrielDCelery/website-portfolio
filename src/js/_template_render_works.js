@@ -4,6 +4,8 @@
 VARIABLES
 ********************************************************************************/
 
+var jsonData;
+
 var phpGetDataLink = 'php/get-works.php';
 var imagesLocation = 'img/portfolio/';
 var imagesExtension = '.jpg';
@@ -17,19 +19,34 @@ var $template = $('#templateWorks');
 var $rendered = $('#renderedWorks');
 
 /********************************************************************************
+FUNCTIONS
+********************************************************************************/
+
+function renderWorks(){
+
+	$.getJSON(phpGetDataLink, function (data) {
+
+		jsonData = templateModule.fixImageRoutes(data, dbImageName, imagesLocation, imagesExtension, testDevice.screenSize());
+		jsonData = templateModule.addColorClasses(data, dbPercentage);
+		jsonData = templateModule.checkDisabledStatus(data, dbProjectLink, dbGithubLink);
+
+		templateModule.renderTemplate($template, jsonData, $rendered);
+
+	});
+
+}
+
+/********************************************************************************
+EVENT BINDERS
+********************************************************************************/
+
+$(window).on('resize', renderWorks);
+
+/********************************************************************************
 INITIATING FUNCTIONS DURING LOADING
 ********************************************************************************/
 
-$.getJSON(phpGetDataLink, function (data) {
-
-	var data = templateModule.fixImageRoutes(data, dbImageName, imagesLocation, imagesExtension, testDevice.screenSize());
-	data = templateModule.addColorClasses(data, dbPercentage);
-	data = templateModule.checkDisabledStatus(data, dbProjectLink, dbGithubLink);
-
-	templateModule.renderTemplate($template, data, $rendered);
-
-});
-
+renderWorks();
 
 
 }());
