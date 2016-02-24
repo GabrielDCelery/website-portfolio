@@ -62,42 +62,40 @@
 			{{#data}}
 				<div class="portfolio-item">
 					<div class="row">
-						<div class="col-sm-12 text-center">
-							<p>{{title}}</p>
-						</div>
 						<div class="col-sm-7">
 							<img src="{{preview_image}}">
 						</div>
 						<div class="col-sm-5">
 							<div class="clearfix">
-								<div class="c100 p{{completion_percentage}} {{color}} center">
-									<div class="percentage-circle">
-										{{completion_percentage}}%
-									</div>
-									<div class="slice">
-										<div class="bar"></div>
-										<div class="fill"></div>
-									</div>
-								</div>
+								<a href="{{link_github}}" target="_blank">
+									<button class="btn btn-default btn-block {{githubButtonStyle}}" {{githubButtonStatus}}>
+										VISIT GITHUB
+									</button>
+								</a>
+								<a href="{{link_website}}" target="_blank">
+									<button class="btn btn-default btn-block {{projectButtonStyle}}" {{projectButtonStatus}}>
+										VISIT THE WEBSITE
+									</button>
+								</a>
 							</div>		
 						</div>
+					</div>
+					<div class="row">
 						<div class="col-sm-12">
-							<p>Tools: {{technologies_used}}</p>
-							<p>Skills showcased: {{skills_showcased}}</p>
-						</div>
-						<div class="col-sm-6">
-							<a href="{{link_website}}" target="_blank">
-								<button class="btn btn-default btn-block {{projectButtonStyle}}" {{projectButtonStatus}}>
-									VISIT THE WEBSITE
-								</button>
-							</a>
-						</div>
-						<div class="col-sm-6">
-							<a href="{{link_github}}" target="_blank">
-								<button class="btn btn-default btn-block {{githubButtonStyle}}" {{githubButtonStatus}}>
-									VISIT GITHUB
-								</button>
-							</a>	
+							<table class="table">
+								<tr>
+									<td>Description:</td>
+									<td>{{title}}</td>
+								</tr>
+									<tr>
+									<td>Tools:</td>
+									<td>{{technologies_used}}</td>
+								</tr>
+								<tr>
+									<td>Skills showcased:</td>
+									<td>{{skills_showcased}}</td>
+								</tr>							
+							</table>
 						</div>
 					</div>
 				</div>

@@ -43,18 +43,18 @@ var templateModule = (function(){
 
 			if(data[i][dbProjectLink] === null || data[i][dbProjectLink] === 'undefined' || data[i][dbProjectLink] === ''){
 				data[i]['projectButtonStatus'] = 'disabled';
-				data[i]['projectButtonStyle'] = 'btn-danger';
+				data[i]['projectButtonStyle'] = 'btn-default';
 			} else {
 				data[i]['projectButtonStatus'] = '';
-				data[i]['projectButtonStyle'] = 'btn-primary';
+				data[i]['projectButtonStyle'] = 'btn-info';
 			}
 
 			if(data[i][dbGithubLink] === null || data[i][dbGithubLink] === 'undefined' || data[i][dbGithubLink] === ''){
 				data[i]['githubButtonStatus'] = 'disabled';
-				data[i]['githubButtonStyle'] = 'btn-danger';
+				data[i]['githubButtonStyle'] = 'btn-default';
 			} else {
 				data[i]['githubButtonStatus'] = '';
-				data[i]['githubButtonStyle'] = 'btn-info';
+				data[i]['githubButtonStyle'] = 'btn-primary';
 			}
 
 		}
