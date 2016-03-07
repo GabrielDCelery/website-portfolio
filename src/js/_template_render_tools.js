@@ -22,12 +22,21 @@ FUNCTIONS
 
 function renderTools(){
 	$.getJSON(phpGetDataLink, function (data) {
-
-
+		
 		jsonData = templateModule.fixImageRoutes(data, dbImageName, imagesLocation, imagesExtension, testDevice.screenSize());
 		jsonData = templateModule.addColorClasses(data, dbPercentage);
 
 		templateModule.renderTemplate($template, jsonData, $rendered);
+
+		var input = {
+			selectedElement: 'portfolio-icon-tool',
+			animateClass: 'portfolio-icon-animate-on',
+			numberOfElements: jsonData.length,
+			randomNumber: 0, 
+			nextEventName: 'animateToolsIcon'
+		}
+
+		events.emit('animateToolsIcon', input);
 
 	});
 }

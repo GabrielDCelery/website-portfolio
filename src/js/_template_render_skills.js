@@ -29,6 +29,16 @@ function renderSkills(){
 
 		templateModule.renderTemplate($template, jsonData, $rendered);
 
+		var input = {
+			selectedElement: 'portfolio-icon-skill',
+			animateClass: 'portfolio-icon-animate-on',
+			numberOfElements: jsonData.length,
+			randomNumber: 0, 
+			nextEventName: 'animateSkillsIcon'
+		}
+
+		events.emit('animateSkillsIcon', input);
+
 	});
 }
 

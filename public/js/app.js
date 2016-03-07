@@ -1,3 +1,43 @@
+var events = {
+	events: {},
+	on: function(eventName, fn){
+		this.events[eventName] = this.events[eventName] || [];
+		this.events[eventName].push(fn);
+	},
+	emit: function(eventName, data){
+		if(this.events[eventName]){
+			this.events[eventName].forEach(function(fn){
+				fn(data);
+			})
+		}
+	}
+};
+(function(){
+
+	function animateIcon(input){
+
+		var number;
+
+		do {
+			number = Math.floor(Math.random() * input.numberOfElements);
+		} while (input.randomNumber == number)
+
+		var $selectedElement = $('.' + input.selectedElement + ':eq(' + number + ')');
+
+		$selectedElement.addClass(input.animateClass);
+
+		input.randomNumber = number;
+
+		setTimeout(function(){
+			$selectedElement.removeClass(input.animateClass);
+			events.emit(input.nextEventName, input);
+		}, 1500)
+	}
+
+	events.on('animateSkillsIcon', animateIcon);
+	events.on('animateToolsIcon', animateIcon);
+
+})()
 var templateModule = (function(){
 
 	function fixImageRoutes(data, dbImageName, imageLocation, imageExtension, deviceSize){
@@ -156,6 +196,16 @@ function renderSkills(){
 
 		templateModule.renderTemplate($template, jsonData, $rendered);
 
+		var input = {
+			selectedElement: 'portfolio-icon-skill',
+			animateClass: 'portfolio-icon-animate-on',
+			numberOfElements: jsonData.length,
+			randomNumber: 0, 
+			nextEventName: 'animateSkillsIcon'
+		}
+
+		events.emit('animateSkillsIcon', input);
+
 	});
 }
 
@@ -198,12 +248,21 @@ FUNCTIONS
 
 function renderTools(){
 	$.getJSON(phpGetDataLink, function (data) {
-
-
+		
 		jsonData = templateModule.fixImageRoutes(data, dbImageName, imagesLocation, imagesExtension, testDevice.screenSize());
 		jsonData = templateModule.addColorClasses(data, dbPercentage);
 
 		templateModule.renderTemplate($template, jsonData, $rendered);
+
+		var input = {
+			selectedElement: 'portfolio-icon-tool',
+			animateClass: 'portfolio-icon-animate-on',
+			numberOfElements: jsonData.length,
+			randomNumber: 0, 
+			nextEventName: 'animateToolsIcon'
+		}
+
+		events.emit('animateToolsIcon', input);
 
 	});
 }

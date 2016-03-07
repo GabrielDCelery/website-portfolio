@@ -31,6 +31,8 @@ gulp.task('less', function () {
 gulp.task('concatJs', function(){
 	return gulp.src(
 		[
+			'./src/js/_eventemitter.js',
+			'./src/js/_animate_icons.js',
 			'./src/js/_template_module.js',
 			'./src/js/_template_test_device.js',
 			'./src/js/_template_render_skills.js',

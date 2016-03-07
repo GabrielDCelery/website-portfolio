@@ -1297,8 +1297,6 @@ hr {
   font-weight: bold;
   border: 3px #659933 solid;
   border-radius: 10px;
-  filter: grayscale(100%);
-  transition: all 0.3s;
 }
 .portfolio-icon img {
   width: 100%;
@@ -1336,6 +1334,14 @@ hr {
     align-items: center;
     width: 70%;
   }
+}
+.portfolio-icon {
+  transition: all 1s;
+  filter: grayscale(100%);
+}
+.portfolio-icon-animate-on {
+  filter: none;
+  box-shadow: 3px 3px 8px #333;
 }
 footer {
   height: 50px;
