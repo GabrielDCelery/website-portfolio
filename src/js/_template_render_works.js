@@ -53,8 +53,6 @@ function renderWorks(){
 				return obj;
 			})
 
-			console.log(jsonData)
-
 			templateModule.renderTemplate($template, jsonData, $rendered);
 
 		})
