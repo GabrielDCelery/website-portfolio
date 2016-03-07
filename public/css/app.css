@@ -1069,6 +1069,9 @@ NAVBAR
 /*************************************************************************************
 CONTENT
 *************************************************************************************/
+/*************************************************************************************
+PORTFOLIO ICONS
+*************************************************************************************/
 @font-face {
   font-family: 'CustomTOR';
   src: url('/fonts/CustomTOR/CustomTOR.eot'), url('/fonts/CustomTOR/CustomTOR.woff') format('woff'), url('/fonts/CustomTOR/CustomTOR.ttf') format('truetype');
@@ -1281,6 +1284,57 @@ hr {
   hr {
     margin-top: 40px;
     margin-bottom: 40px;
+  }
+}
+.bottom-buffer {
+  margin-bottom: 20px;
+}
+.portfolio-icon {
+  display: flex;
+  padding: 10px;
+  font-family: 'CustomTOR' !important;
+  color: #963254;
+  font-weight: bold;
+  border: 3px #659933 solid;
+  border-radius: 10px;
+  filter: grayscale(100%);
+  transition: all 0.3s;
+}
+.portfolio-icon img {
+  width: 100%;
+}
+.portfolio-icon-image {
+  width: 100%;
+}
+.portfolio-icon-text {
+  display: none;
+}
+.portfolio-icon:hover {
+  filter: none;
+  box-shadow: 3px 3px 8px #333;
+}
+@media (min-width: 768px) {
+  .portfolio-icon-image {
+    width: 30%;
+  }
+  .portfolio-icon-text {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    align-items: center;
+    width: 70%;
+  }
+}
+@media (min-width: 992px) {
+  .portfolio-icon-image {
+    width: 30%;
+  }
+  .portfolio-icon-text {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    align-items: center;
+    width: 70%;
   }
 }
 footer {

@@ -1,0 +1,68 @@
+.bottom-buffer {
+	margin-bottom: 20px;
+}
+
+.portfolio-icon {
+
+	display: flex;
+	padding: @portfolio-icons-padding;
+
+	font-family: 'CustomTOR' !important;
+	color: @portfolio-icons-font-color;
+	font-weight: bold;
+
+	border: @portfolio-icons-border-width @portfolio-icons-border-color solid;
+	border-radius: @portfolio-icons-border-radius;
+
+	filter: grayscale(100%);
+	transition: all 0.3s;
+
+	img {
+		width: 100%;
+	}
+
+}
+
+.portfolio-icon-image {
+	width: 100%;
+}
+
+.portfolio-icon-text {
+	display: none;
+}
+
+.portfolio-icon:hover {
+	filter: none;
+	box-shadow: 3px 3px 8px @portfolio-icons-box-shadow-color;
+}
+
+@media (min-width: @screen-sm-min) {
+
+	.portfolio-icon-image {
+		width: 30%;
+	}
+
+	.portfolio-icon-text {
+		display: flex;
+		justify-content: center;
+		font-size: @portfolio-icons-text-size;
+		align-items: center;
+		width: 70%;
+	}
+
+}
+
+@media (min-width: @screen-md-min) {
+	.portfolio-icon-image {
+		width: 30%;
+	}
+
+	.portfolio-icon-text {
+		display: flex;
+		justify-content: center;
+		font-size: @portfolio-icons-text-size * 5 / 3;
+		align-items: center;
+		width: 70%;
+	}
+
+}

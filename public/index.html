@@ -119,18 +119,20 @@
 		<div id="renderedSkills" class="portfolio-content clearfix"></div>
 
 		<script id="templateSkills" type="x-tmpl-mustache">
-			{{#data}}
-				<div class="c100 p{{percentage}} {{color}} small">
-					<div class="percentage-circle">
-						<span><img src="{{image_name}}"></span>
-						<span style="display:none">{{skill_name}}</span>
+			<div class="row">
+				{{#data}}
+					<div class="col-xs-3 bottom-buffer">
+						<div class="portfolio-icon">
+							<div class="portfolio-icon-image">
+								<img src="{{image_name}}">
+							</div>
+							<div class="portfolio-icon-text">
+								{{skill_name}}
+							</div>
+						</div>
 					</div>
-					<div class="slice">
-						<div class="bar"></div>
-						<div class="fill"></div>
-					</div>
-                </div>
-			{{/data}}
+				{{/data}}
+			</div>
 		</script>
 
 		<hr>
@@ -140,18 +142,20 @@
 		<div id="renderedTools" class="portfolio-content clearfix"></div>
 
 		<script id="templateTools" type="x-tmpl-mustache">
-			{{#data}}
-				<div class="c100 p{{percentage}} {{color}} small">
-					<div class="percentage-circle">
-						<span><img src="{{image_name}}"></span>
-						<span style="display:none">{{tool_name}}</span>
+			<div class="row">
+				{{#data}}
+					<div class="col-xs-3 bottom-buffer">
+						<div class="portfolio-icon">
+							<div class="portfolio-icon-image">
+								<img src="{{image_name}}">
+							</div>
+							<div class="portfolio-icon-text">
+								{{tool_name}}
+							</div>
+						</div>
 					</div>
-					<div class="slice">
-						<div class="bar"></div>
-						<div class="fill"></div>
-					</div>
-                </div>
-			{{/data}}
+				{{/data}}
+			</div>
 		</script>
 
 		<hr>
