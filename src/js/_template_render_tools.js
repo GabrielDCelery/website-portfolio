@@ -32,7 +32,6 @@ function renderTools(){
 			selectedElement: 'portfolio-icon-tool',
 			animateClass: 'portfolio-icon-animate-on',
 			numberOfElements: jsonData.length,
-			randomNumber: 0, 
 			nextEventName: 'animateToolsIcon'
 		}
 

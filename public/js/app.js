@@ -200,7 +200,6 @@ function renderSkills(){
 			selectedElement: 'portfolio-icon-skill',
 			animateClass: 'portfolio-icon-animate-on',
 			numberOfElements: jsonData.length,
-			randomNumber: 0, 
 			nextEventName: 'animateSkillsIcon'
 		}
 
@@ -258,7 +257,6 @@ function renderTools(){
 			selectedElement: 'portfolio-icon-tool',
 			animateClass: 'portfolio-icon-animate-on',
 			numberOfElements: jsonData.length,
-			randomNumber: 0, 
 			nextEventName: 'animateToolsIcon'
 		}
 
