@@ -7,7 +7,7 @@ $pdo = new PDO('mysql:dbname=' . $dbname . ';host=' . $host, $db_username, $db_p
 $query_string = 
 	'SELECT * FROM ' .
 	$table_name_skills .
-	' ORDER BY percentage DESC ';
+	' ORDER BY skill_name';
 
 $query = $pdo->query($query_string);
 $result = $query->fetchAll(PDO::FETCH_ASSOC);

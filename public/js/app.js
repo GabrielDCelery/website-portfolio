@@ -227,7 +227,7 @@ FUNCTIONS
 
 function renderTools(){
 	$.getJSON(phpGetDataLink, function (data) {
-		
+
 		jsonData = templateModule.fixImageRoutes(data, dbImageName, imagesLocation, imagesExtension, testDevice.screenSize());
 
 		templateModule.renderTemplate($template, jsonData, $rendered);
