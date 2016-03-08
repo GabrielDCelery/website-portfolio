@@ -192,60 +192,6 @@ hr {
     margin-bottom: 40px;
   }
 }
-.bottom-buffer {
-  margin-bottom: 20px;
-}
-.portfolio-icon {
-  display: flex;
-  padding: 10px;
-  font-family: 'CustomTOR' !important;
-  color: #963254;
-  font-weight: bold;
-  border: 3px #659933 solid;
-  border-radius: 10px;
-}
-.portfolio-icon img {
-  width: 100%;
-}
-.portfolio-icon-image {
-  width: 100%;
-}
-.portfolio-icon-text {
-  display: none;
-}
-@media (min-width: 768px) {
-  .portfolio-icon-image {
-    width: 30%;
-  }
-  .portfolio-icon-text {
-    display: flex;
-    justify-content: center;
-    font-size: 15px;
-    align-items: center;
-    width: 70%;
-  }
-}
-@media (min-width: 992px) {
-  .portfolio-icon-image {
-    width: 30%;
-  }
-  .portfolio-icon-text {
-    display: flex;
-    justify-content: center;
-    font-size: 25px;
-    align-items: center;
-    width: 70%;
-  }
-}
-.portfolio-icon {
-  transition: all 1s;
-  filter: grayscale(100%);
-}
-.portfolio-icon:hover,
-.portfolio-icon-animate-on {
-  filter: none;
-  box-shadow: 3px 3px 8px #333;
-}
 footer {
   height: 50px;
   padding: 6px;
@@ -311,4 +257,58 @@ footer img {
   .navbar-default li {
     font-size: 18px;
   }
+}
+.bottom-buffer {
+  margin-bottom: 20px;
+}
+.portfolio-icon {
+  display: flex;
+  padding: 10px;
+  font-family: 'CustomTOR' !important;
+  color: #963254;
+  font-weight: bold;
+  border: 3px #659933 solid;
+  border-radius: 10px;
+}
+.portfolio-icon img {
+  width: 100%;
+}
+.portfolio-icon-image {
+  width: 100%;
+}
+.portfolio-icon-text {
+  display: none;
+}
+@media (min-width: 768px) {
+  .portfolio-icon-image {
+    width: 30%;
+  }
+  .portfolio-icon-text {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    align-items: center;
+    width: 70%;
+  }
+}
+@media (min-width: 992px) {
+  .portfolio-icon-image {
+    width: 30%;
+  }
+  .portfolio-icon-text {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    align-items: center;
+    width: 70%;
+  }
+}
+.portfolio-icon {
+  transition: all 1s;
+  filter: grayscale(100%);
+}
+.portfolio-icon:hover,
+.portfolio-icon-animate-on {
+  filter: none;
+  box-shadow: 3px 3px 8px #333;
 }
