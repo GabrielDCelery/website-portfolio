@@ -1,20 +1,36 @@
 #aboutme {
 
 	img {
-		width: 40%;
+		width: 30%;
 		border-radius: 100%;
+	}
+
+	p {
+		font-size: @portfolio-aboutme-font-size;
 	}
 
 }
 
 @media (min-width: @screen-sm-min) {
+	
 	#aboutme {
 		img {
 			width: 100%;
 		}
 	}
+
+	p {
+		font-size: @portfolio-aboutme-font-size * 8 / 7;
+	}
+
 }
 
 @media (min-width: @screen-md-min) {
+
+	#aboutme {
+		p {
+			font-size: @portfolio-aboutme-font-size * 9 / 7;
+		}
+	}
 
 }
