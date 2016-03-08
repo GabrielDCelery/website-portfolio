@@ -59,24 +59,6 @@ var templateModule = (function(){
 
 	}
 
-	function addColorClasses(data, dbPercentage){
-
-		for(var i = 0; i < data.length; i++){
-
-			if(data[i][dbPercentage] > 66){
-				data[i]['color'] = 'green';
-			} else if (data[i][dbPercentage] <= 66 && data[i][dbPercentage] > 33) {
-				data[i]['color'] = 'orange';
-			} else {
-				data[i]['color'] = '';
-			}
-
-		}
-
-		return data;
-
-	}
-
 	function checkDisabledStatus(data, dbProjectLink, dbGithubLink){
 
 		for(var i = 0; i < data.length; i++){
@@ -120,7 +102,6 @@ var templateModule = (function(){
 	return {
 
 		fixImageRoutes: fixImageRoutes,
-		addColorClasses: addColorClasses,
 		checkDisabledStatus: checkDisabledStatus,
 		renderTemplate: renderTemplate
 
@@ -192,7 +173,6 @@ function renderSkills(){
 	$.getJSON(phpGetDataLink, function (data) {
 
 		jsonData = templateModule.fixImageRoutes(data, dbImageName, imagesLocation, imagesExtension, testDevice.screenSize());
-		jsonData = templateModule.addColorClasses(data, dbPercentage);
 
 		templateModule.renderTemplate($template, jsonData, $rendered);
 
@@ -249,7 +229,6 @@ function renderTools(){
 	$.getJSON(phpGetDataLink, function (data) {
 		
 		jsonData = templateModule.fixImageRoutes(data, dbImageName, imagesLocation, imagesExtension, testDevice.screenSize());
-		jsonData = templateModule.addColorClasses(data, dbPercentage);
 
 		templateModule.renderTemplate($template, jsonData, $rendered);
 
@@ -312,7 +291,6 @@ function renderWorks(){
 	$.getJSON(phpGetWorksLink, function (data) {
 
 		jsonData = templateModule.fixImageRoutes(data, dbImageName, imagesLocation, imagesExtension, testDevice.screenSize());
-		jsonData = templateModule.addColorClasses(data, dbPercentage);
 		jsonData = templateModule.checkDisabledStatus(data, dbProjectLink, dbGithubLink);
 
 		$.getJSON(phpGetDescriptionsLink, function (data){

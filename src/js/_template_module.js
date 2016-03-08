@@ -19,24 +19,6 @@ var templateModule = (function(){
 
 	}
 
-	function addColorClasses(data, dbPercentage){
-
-		for(var i = 0; i < data.length; i++){
-
-			if(data[i][dbPercentage] > 66){
-				data[i]['color'] = 'green';
-			} else if (data[i][dbPercentage] <= 66 && data[i][dbPercentage] > 33) {
-				data[i]['color'] = 'orange';
-			} else {
-				data[i]['color'] = '';
-			}
-
-		}
-
-		return data;
-
-	}
-
 	function checkDisabledStatus(data, dbProjectLink, dbGithubLink){
 
 		for(var i = 0; i < data.length; i++){
@@ -80,7 +62,6 @@ var templateModule = (function(){
 	return {
 
 		fixImageRoutes: fixImageRoutes,
-		addColorClasses: addColorClasses,
 		checkDisabledStatus: checkDisabledStatus,
 		renderTemplate: renderTemplate
 

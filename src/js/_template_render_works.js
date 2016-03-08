@@ -31,7 +31,6 @@ function renderWorks(){
 	$.getJSON(phpGetWorksLink, function (data) {
 
 		jsonData = templateModule.fixImageRoutes(data, dbImageName, imagesLocation, imagesExtension, testDevice.screenSize());
-		jsonData = templateModule.addColorClasses(data, dbPercentage);
 		jsonData = templateModule.checkDisabledStatus(data, dbProjectLink, dbGithubLink);
 
 		$.getJSON(phpGetDescriptionsLink, function (data){

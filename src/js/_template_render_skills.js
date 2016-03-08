@@ -25,7 +25,6 @@ function renderSkills(){
 	$.getJSON(phpGetDataLink, function (data) {
 
 		jsonData = templateModule.fixImageRoutes(data, dbImageName, imagesLocation, imagesExtension, testDevice.screenSize());
-		jsonData = templateModule.addColorClasses(data, dbPercentage);
 
 		templateModule.renderTemplate($template, jsonData, $rendered);
 
