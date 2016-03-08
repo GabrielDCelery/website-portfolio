@@ -20,6 +20,7 @@
     "mustache.js": "mustache#~2.2.1",
     "bootstrap": "~3.3.6",
     "normalize-css": "normalize.css#~3.0.3",
-    "jquery.scrollTo": "~2.1.2"
+    "jquery.scrollTo": "~2.1.2",
+    "SVG-Loaders": "svg-loaders#^1.0.2"
   }
 }
