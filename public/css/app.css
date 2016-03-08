@@ -1307,10 +1307,6 @@ hr {
 .portfolio-icon-text {
   display: none;
 }
-.portfolio-icon:hover {
-  filter: none;
-  box-shadow: 3px 3px 8px #333;
-}
 @media (min-width: 768px) {
   .portfolio-icon-image {
     width: 30%;
@@ -1339,6 +1335,7 @@ hr {
   transition: all 1s;
   filter: grayscale(100%);
 }
+.portfolio-icon:hover,
 .portfolio-icon-animate-on {
   filter: none;
   box-shadow: 3px 3px 8px #333;
