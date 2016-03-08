@@ -14,6 +14,10 @@ PORTFOLIO ICONS
   font-family: 'CustomTOR';
   src: url('/fonts/CustomTOR/CustomTOR.eot'), url('/fonts/CustomTOR/CustomTOR.woff') format('woff'), url('/fonts/CustomTOR/CustomTOR.ttf') format('truetype');
 }
+a:hover,
+a:focus {
+  text-decoration: none;
+}
 html {
   height: 100%;
 }
@@ -45,10 +49,6 @@ body {
 }
 main {
   padding: 0 5%;
-}
-a:hover,
-a:focus {
-  text-decoration: none;
 }
 .portfolio-content {
   margin-top: 20px;
