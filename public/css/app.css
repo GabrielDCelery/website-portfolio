@@ -78,14 +78,6 @@ a:focus {
   margin-top: 15px;
   margin-bottom: 0;
 }
-.portfolio-listing li {
-  font-size: 18px;
-  color: #266d61;
-}
-.portfolio-listing-text-left,
-.portfolio-listing-text-right {
-  text-align: center;
-}
 .contact {
   margin: 20px auto;
   padding: 6px;
@@ -111,10 +103,6 @@ hr {
     margin-top: 12px;
     font-size: 16px;
   }
-  .portfolio-listing li {
-    font-size: 21.6px;
-    color: #266d61;
-  }
   .portfolio-item {
     padding: 12px;
   }
@@ -126,12 +114,6 @@ hr {
   .portfolio-item table {
     margin-top: 17.14285714px;
     margin-bottom: 0;
-  }
-  .portfolio-listing-text-left {
-    text-align: left;
-  }
-  .portfolio-listing-text-right {
-    text-align: right;
   }
   .contact {
     padding: 9px;
@@ -314,5 +296,25 @@ footer img {
     padding-top: 15px;
     padding-bottom: 15px;
     font-size: 75px;
+  }
+}
+.portfolio-listing li {
+  font-size: 18px;
+  color: #266d61;
+}
+.portfolio-listing-text-left,
+.portfolio-listing-text-right {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .portfolio-listing li {
+    font-size: 21.6px;
+    color: #266d61;
+  }
+  .portfolio-listing-text-left {
+    text-align: left;
+  }
+  .portfolio-listing-text-right {
+    text-align: right;
   }
 }
