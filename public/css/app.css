@@ -14,6 +14,10 @@ PORTFOLIO ICONS
   font-family: 'CustomTOR';
   src: url('/fonts/CustomTOR/CustomTOR.eot'), url('/fonts/CustomTOR/CustomTOR.woff') format('woff'), url('/fonts/CustomTOR/CustomTOR.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'Entsani';
+  src: url('/fonts/Entsani/entsani.eot'), url('/fonts/Entsani/entsani.woff') format('woff'), url('/fonts/Entsani/entsani.ttf') format('truetype');
+}
 a:hover,
 a:focus {
   text-decoration: none;
@@ -249,6 +253,13 @@ footer img {
 .portfolio-item table {
   margin-top: 15px;
   margin-bottom: 0;
+}
+.portfolio-item .table > tbody > tr > td {
+  padding: 15px 0;
+}
+.portfolio-item .item-heading {
+  font-style: italic;
+  font-family: 'Entsani', 'Arial';
 }
 @media (min-width: 768px) {
   .portfolio-item {

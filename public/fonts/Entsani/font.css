@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'entsani';
+	src: url('./entsani.eot');
+	src: local('entsani'), url('./entsani.woff') format('woff'), url('./entsani.ttf') format('truetype');
+}
+/* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_371">Text with this font applied</p> */
+.fontsforweb_fontid_371 {
+	font-family: 'entsani' !important;
+}
+
+/* Font downloaded from FontsForWeb.com */
