@@ -8,6 +8,9 @@ NAVBAR
 CONTENT
 *************************************************************************************/
 /*************************************************************************************
+PORTFOLIO ITEMS
+*************************************************************************************/
+/*************************************************************************************
 PORTFOLIO ICONS
 *************************************************************************************/
 @font-face {
@@ -261,6 +264,9 @@ footer img {
   font-style: italic;
   font-family: 'Entsani', 'Arial';
 }
+.portfolio-item li {
+  padding: 5px 0;
+}
 @media (min-width: 768px) {
   .portfolio-item {
     padding: 12px;
@@ -273,6 +279,9 @@ footer img {
   .portfolio-item table {
     margin-top: 17.14285714px;
     margin-bottom: 0;
+  }
+  .portfolio-item li {
+    padding: 5.71428571px 0;
   }
 }
 @media (min-width: 992px) {
@@ -287,6 +296,9 @@ footer img {
   .portfolio-item table {
     margin-top: 19.28571429px;
     margin-bottom: 0;
+  }
+  .portfolio-item li {
+    padding: 6.42857143px 0;
   }
 }
 .portfolio-listing li {
