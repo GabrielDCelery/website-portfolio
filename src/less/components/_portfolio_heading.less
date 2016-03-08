@@ -1,0 +1,33 @@
+.portfolio-heading {
+
+	padding-top: @content-title-padding;
+	padding-bottom: @content-title-padding;
+	font-family: 'CustomTOR' !important;
+	font-size: @content-title-text-size;
+	color: @content-title-text-color-primary;
+
+	span {
+		color: @content-title-text-color-secondary;
+	}
+
+}
+
+@media (min-width: @screen-sm-min) {
+
+	.portfolio-heading {
+		padding-top: @content-title-padding * 1.5;
+		padding-bottom: @content-title-padding * 1.5;
+		font-size: @content-title-text-size * 2;
+	}
+	
+}
+
+@media (min-width: @screen-md-min) {
+
+	.portfolio-heading {
+		padding-top: @content-title-padding * 2.5;
+		padding-bottom: @content-title-padding * 2.5;
+		font-size: @content-title-text-size * 2.5;
+	}
+
+}
