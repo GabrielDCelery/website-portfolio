@@ -1,0 +1,22 @@
+.contact {
+	margin: @content-margin auto;
+	padding: @contact-padding;
+	color: @contact-color;
+	background-color: @contact-background-color;
+	font-size: @contact-font-size;
+	cursor: pointer;
+}
+
+@media (min-width: @screen-sm-min) {
+	.contact {
+		padding: @contact-padding * 1.5;
+		font-size: @contact-font-size * 1.5;
+	}
+}
+
+@media (min-width: @screen-md-min) {
+	.contact {
+		padding: @contact-padding * 2;
+		font-size: @contact-font-size * 2;
+	}
+}

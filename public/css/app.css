@@ -54,14 +54,6 @@ main {
   margin-top: 20px;
   font-size: 14px;
 }
-.contact {
-  margin: 20px auto;
-  padding: 6px;
-  color: #d4d4d4;
-  background-color: #2C7F45;
-  font-size: 16px;
-  cursor: pointer;
-}
 #content-aboutme img {
   width: 40%;
   border-radius: 100%;
@@ -78,10 +70,6 @@ hr {
     margin-top: 12px;
     font-size: 16px;
   }
-  .contact {
-    padding: 9px;
-    font-size: 24px;
-  }
   hr {
     margin-top: 30px;
     margin-bottom: 30px;
@@ -94,10 +82,6 @@ hr {
   .portfolio-content {
     margin-top: 40px;
     font-size: 18px;
-  }
-  .contact {
-    padding: 12px;
-    font-size: 32px;
   }
   hr {
     margin-top: 40px;
@@ -317,5 +301,25 @@ footer img {
   }
   .portfolio-listing-text-right {
     text-align: right;
+  }
+}
+.contact {
+  margin: 20px auto;
+  padding: 6px;
+  color: #d4d4d4;
+  background-color: #2C7F45;
+  font-size: 16px;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .contact {
+    padding: 9px;
+    font-size: 24px;
+  }
+}
+@media (min-width: 992px) {
+  .contact {
+    padding: 12px;
+    font-size: 32px;
   }
 }
