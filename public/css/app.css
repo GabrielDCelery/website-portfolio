@@ -303,7 +303,7 @@ footer img {
     text-align: right;
   }
 }
-.contact {
+#contact {
   margin: 20px auto;
   padding: 6px;
   color: #d4d4d4;
@@ -312,13 +312,13 @@ footer img {
   cursor: pointer;
 }
 @media (min-width: 768px) {
-  .contact {
+  #contact {
     padding: 9px;
     font-size: 24px;
   }
 }
 @media (min-width: 992px) {
-  .contact {
+  #contact {
     padding: 12px;
     font-size: 32px;
   }
