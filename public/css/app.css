@@ -34,9 +34,16 @@ html {
 body {
   min-height: 100%;
   position: relative;
+}
+main {
+  display: block;
+  margin: 0 auto;
   max-width: 1440px;
 }
 @media (min-width: 768px) {
+  body {
+    margin-left: 140px;
+  }
   header {
     width: 140px;
     height: 100%;
@@ -45,16 +52,13 @@ body {
     left: 0;
     margin-bottom: 0;
   }
-  main {
-    margin-left: 140px;
-  }
 }
 @media (min-width: 992px) {
+  body {
+    margin-left: 200px;
+  }
   header {
     width: 200px;
-  }
-  main {
-    margin-left: 200px;
   }
 }
 main {

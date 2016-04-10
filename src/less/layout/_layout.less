@@ -5,10 +5,19 @@ html {
 body {
 	min-height: 100%;
 	position: relative;
+}
+
+main {
+	display: block;
+	margin: 0 auto;
 	max-width: @max-width;
 }
 
 @media (min-width: @screen-sm-min) {
+
+	body {
+		margin-left: @navbar-width-sm;
+	}
 
 	header {
 		width: @navbar-width-sm;
@@ -20,20 +29,16 @@ body {
 
 	}
 
-	main {
-		margin-left: @navbar-width-sm;
-	}
-
 }
 
 @media (min-width: @screen-md-min) {
 
-	header {
-		width: @navbar-width-md;
+	body {
+		margin-left: @navbar-width-md;
 	}
 
-	main {
-		margin-left: @navbar-width-md;
+	header {
+		width: @navbar-width-md;
 	}
 
 }
